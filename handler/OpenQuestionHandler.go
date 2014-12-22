@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"strconv"
 )
 
@@ -11,7 +11,7 @@ type OpenQuestionHandler struct {
 }
 
 func (self *OpenQuestionHandler) Get() {
-	qid, _ := self.GetInt(":qid")
+	qid, _ := self.GetInt64(":qid")
 	uid, _ := self.GetSession("userid").(int64)
 	role, _ := self.GetSession("userrole").(int64)
 	if qid > 0 && uid > 0 {

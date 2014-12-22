@@ -3,9 +3,9 @@ package handler
 import (
 	//"fmt"
 	//"html/template"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	//"strconv"
 )
 
@@ -16,7 +16,7 @@ type QuestionHandler struct {
 func (self *QuestionHandler) Get() {
 	self.TplNames = "sdc/question.html"
 
-	qid, _ := self.GetInt(":qid")
+	qid, _ := self.GetInt64(":qid")
 
 	if qid > 0 {
 

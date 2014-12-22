@@ -2,8 +2,8 @@ package handler
 
 import (
 	"fmt"
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"strconv"
 )
 
@@ -13,7 +13,7 @@ type ViewQuestionHandler struct {
 
 func (self *ViewQuestionHandler) Get() {
 	name := self.GetString(":name")
-	id, _ := self.GetInt(":id")
+	id, _ := self.GetInt64(":id")
 
 	if name != "" && id > 0 {
 		if name == "question" {

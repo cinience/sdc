@@ -3,9 +3,9 @@ package lib
 import (
 	//"fmt"
 	"github.com/astaxie/beego"
+	"github.com/cinience/sdc/helper"
 	"html/template"
 	"runtime"
-	"sdc/helper"
 	//"sdc/model"
 )
 

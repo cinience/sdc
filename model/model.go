@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 	//_ "github.com/lib/pq"
-	"github.com/lunny/xorm"
+	"github.com/cinience/sdc/helper"
+	"github.com/go-xorm/xorm"
 	_ "github.com/mattn/go-sqlite3"
 	"os"
-	"sdc/helper"
 	"strconv"
 	"strings"
 	"time"
@@ -374,13 +374,14 @@ func SetEngine() (*xorm.Engine, error) {
 	cacher := xorm.NewLRUCacher(xorm.NewMemoryStore(), 10000)
 	Engine.SetDefaultCacher(cacher)
 
-	f, err := os.Create("./logs/sql.log")
-	if err != nil {
-		println(err.Error())
-		panic("OMG!")
-	}
-	Engine.Logger = f
-
+	/*
+		f, err := os.Create("./logs/sql.log")
+		if err != nil {
+			println(err.Error())
+			panic("OMG!")
+		}
+		Engine.Logger = f
+	*/
 	return Engine, err
 }
 

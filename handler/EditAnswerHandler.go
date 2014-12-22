@@ -3,10 +3,10 @@ package handler
 import (
 	"fmt"
 	"github.com/astaxie/beego"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"html/template"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
 	"strconv"
 	"strings"
 	"time"
@@ -20,7 +20,7 @@ func (self *EditAnswerHandler) Get() {
 	self.TplNames = "sdc/edit-answer.html"
 	flash := beego.NewFlash()
 
-	aid, _ := self.GetInt(":aid")
+	aid, _ := self.GetInt64(":aid")
 
 	if aid_handler, err := model.GetAnswer(aid); err == nil && aid_handler != nil {
 		uid, _ := self.GetSession("userid").(int64)
@@ -53,7 +53,7 @@ func (self *EditAnswerHandler) Post() {
 
 	flash := beego.NewFlash()
 
-	aid, _ := self.GetInt(":aid")
+	aid, _ := self.GetInt64(":aid")
 
 	if aid_handler, err := model.GetAnswer(aid); err == nil {
 		uid, _ := self.GetSession("userid").(int64)

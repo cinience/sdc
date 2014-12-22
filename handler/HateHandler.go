@@ -2,9 +2,9 @@ package handler
 
 import (
 	"fmt"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"strconv"
 	"time"
 )
@@ -17,7 +17,7 @@ func (self *HateHandler) Get() {
 
 	if helper.IsSpider(self.Ctx.Request.UserAgent()) != true {
 		name := self.GetString(":name")
-		id, _ := self.GetInt(":id")
+		id, _ := self.GetInt64(":id")
 		uid, _ := self.GetSession("userid").(int64)
 
 		if name == "question" {

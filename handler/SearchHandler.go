@@ -2,10 +2,10 @@ package handler
 
 import (
 	"fmt"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"html/template"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
 	"strconv"
 	"strings"
 )
@@ -22,9 +22,9 @@ func (self *SearchHandler) Get() {
 		keyword = template.HTMLEscapeString(strings.TrimSpace(self.GetString("keyword")))
 	}
 
-	ipage, _ := self.GetInt(":page")
+	ipage, _ := self.GetInt64(":page")
 	if ipage <= 0 {
-		ipage, _ = self.GetInt("page")
+		ipage, _ = self.GetInt64("page")
 	}
 	page := int(ipage)
 

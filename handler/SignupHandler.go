@@ -4,9 +4,9 @@ import (
 	//"fmt"
 	"github.com/astaxie/beego"
 	//"html/template"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	//"strconv"
 	"strings"
 )

@@ -3,9 +3,9 @@ package core
 import (
 	"encoding/json"
 	"fmt"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"strconv"
 )
 
@@ -49,7 +49,7 @@ func (self *TopicHandler) Post() {
 
 //获取帖子
 func (self *TopicHandler) Get() {
-	tid, _ := self.GetInt(":objectId") //beego api模式下，提交的参数名总是唤作objectId
+	tid, _ := self.GetInt64(":objectId") //beego api模式下，提交的参数名总是唤作objectId
 
 	if tid > 0 {
 		tp, _ := model.GetTopic(tid)
@@ -70,7 +70,7 @@ func (self *TopicHandler) Put() {
 
 		if rsa_decrypt_content, err := helper.ReceivingPackets(true, hash, "PUT", self.Ctx.Input.RequestBody, aesPublicKey, rsaPublicKey, rsaPrivateKey); err == nil {
 
-			tid, _ := self.GetInt(":objectId")
+			tid, _ := self.GetInt64(":objectId")
 			tp := new(model.Topic)
 			json.Unmarshal(rsa_decrypt_content, &tp)
 
@@ -98,7 +98,7 @@ func (self *TopicHandler) Delete() {
 
 		if rsa_decrypt_content, err := helper.ReceivingPackets(true, hash, "DELETE", self.Ctx.Input.RequestBody, aesPublicKey, rsaPublicKey, rsaPrivateKey); err == nil {
 
-			tid, _ := self.GetInt(":objectId")
+			tid, _ := self.GetInt64(":objectId")
 			var tp *model.Topic
 			json.Unmarshal(rsa_decrypt_content, &tp)
 			if tid == tp.Id && tid > 0 {

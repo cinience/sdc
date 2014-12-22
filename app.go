@@ -2,11 +2,11 @@ package main
 
 import (
 	"github.com/astaxie/beego"
-	"sdc/helper"
+	"github.com/cinience/sdc/helper"
 	//blogs_handler "sdc/logic/blogs/handlers"
-	"sdc/core"
+	"github.com/cinience/sdc/core"
 	//"sdc/logic/mzr/handler"
-	"sdc/handler"
+	"github.com/cinience/sdc/handler"
 )
 
 func main() {

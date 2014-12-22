@@ -2,10 +2,10 @@ package handler
 
 import (
 	"fmt"
+	"github.com/cinience/sdc/helper"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"html/template"
-	"sdc/helper"
-	"sdc/lib"
-	"sdc/model"
 	"strconv"
 	"strings"
 )
@@ -19,7 +19,7 @@ func (self *MainHandler) Get() {
 	self.Data["catpage"] = "home"
 	self.TplNames = "sdc/main.html"
 
-	ipage, _ := self.GetInt(":page")
+	ipage, _ := self.GetInt64(":page")
 	page := int(ipage)
 
 	tab := template.HTMLEscapeString(strings.TrimSpace(self.GetString(":tab")))

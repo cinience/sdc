@@ -2,9 +2,9 @@ package handler
 
 import (
 	"fmt"
+	"github.com/cinience/sdc/lib"
+	"github.com/cinience/sdc/model"
 	"html/template"
-	"sdc/lib"
-	"sdc/model"
 	"strconv"
 	"strings"
 )
@@ -14,7 +14,7 @@ type NewAnswerHandler struct {
 }
 
 func (self *NewAnswerHandler) Post() {
-	qid, _ := self.GetInt(":qid")
+	qid, _ := self.GetInt64(":qid")
 	suid, _ := self.GetSession("userid").(int64)
 
 	author := template.HTMLEscapeString(strings.TrimSpace(strings.ToLower(self.GetString("author"))))

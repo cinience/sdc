@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"sdc/lib"
+	"github.com/cinience/sdc/lib"
 	"strconv"
 	"time"
 )
