@@ -1,6 +1,6 @@
+# Open-source Q&A engine in Go (golang)
 
-======
+Original repository is:
+https://github.com/insionng/sdc
 
-
-#Thanks
-https://github.com/insionng/sdc  insion@live.com
+I'm currently translating this into English
