@@ -3,14 +3,14 @@
     {{/*
     <aside id="profile-tab">
         <nav class="navlist-group navlist-group-right">
-            <a class="navlist-group-item" href="/bookmarked">我收藏的内容</a>
-            <a class="navlist-group-item" href="/users/following">我关注的人</a>
-            <a class="navlist-group-item" href="/user/invitation">邀请朋友加入</a>
+            <a class="navlist-group-item" href="/bookmarked">Bookmarked</a>
+            <a class="navlist-group-item" href="/users/following">Following</a>
+            <a class="navlist-group-item" href="/user/invitation">Invites</a>
         </nav>
     </aside>
     <aside class="box follow-tags">
-        <a href="/tags" class="i-more right" data-toggle="tooltip" data-placement="bottom" rel="tooltip" title="" data-original-title="更多">更多</a>
-        <h3>关注标签</h3>
+        <a href="/tags" class="i-more right" data-toggle="tooltip" data-placement="bottom" rel="tooltip" title="" data-original-title="Tags">Tags</a>
+        <h3>Tags</h3>
         <ul class="timestream">
             <li class="nothing">
                 还没有关注任何标签哦
@@ -25,12 +25,12 @@
         <ul class="greeting--login list-unstyled">
         <li>
             <a href="/user/signin/" class="btn btn-default">
-                马上登录HiRedis帐号
+                Log In
             </a>
             </li>
             <li>
             <a href="/user/signup/" class="btn btn-default">
-                立即注册HiRedis帐号
+                Sign Up
             </a>
             {{/*
             <a href="/user/oauth/google" class="btn btn-default">
@@ -54,7 +54,7 @@
 
  {{if .replys_8s}}
     <aside class="box">
-        <h3 class="top-title">别样风情</h3>
+        <h3 class="top-title">Replies</h3>
         <ul class="timestream show-pop-tag">
 
       {{range .replys_8s}}
