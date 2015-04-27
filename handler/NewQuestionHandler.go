@@ -26,19 +26,14 @@ func (self *NewQuestionHandler) Post() {
 	flash := beego.NewFlash()
 	tags := template.HTMLEscapeString(strings.TrimSpace(strings.ToLower(self.GetString("tags"))))
 
-	if tags == "" {
-
-		flash.Error("尚未设置标签,请设定正确的标签!")
-		flash.Store(&self.Controller)
-		return
-	} else {
+	{
 
 		uid, _ := self.GetSession("userid").(int64)
 		sess_username, _ := self.GetSession("username").(string)
 		qid_title := template.HTMLEscapeString(strings.TrimSpace(self.GetString("title")))
 		qid_content := template.HTMLEscapeString(strings.TrimSpace(self.GetString("content")))
 
-		if qid_title != "" && qid_content != "" {
+		if qid_title != "" {
 
 			qs := new(model.Question)
 			qs.Title = qid_title
